@@ -1,0 +1,164 @@
+/*
+Valores de tamanho:
+
+rem (1 rem = 16 pixels)
+Recomendado para fonts
+
+% (relativa a tag pai, 10px -> 50% = 5px)
+
+Link para guia sobre unidades de medida
+https://www.w3schools.com/cssref/css_units.php
+https://www.alura.com.br/artigos/guia-de-unidades-no-css?_gl=1*1vvzn3l*_ga*MTc2NjQ3MDQ4NS4xNzE2MjE1MTU2*_ga_1EPWSW3PCS*MTcxODEwNTI2MS40NC4xLjE3MTgxMDcxOTAuMC4wLjA.
+
+Link com guia do meedia queries
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_media_queries/Using_media_queries
+
+Link com guia para git-hub
+https://www.alura.com.br/artigos/o-que-e-git-github
+
+Novos atributos
+
+Mudar de acordo com o tamanho da tela
+@media (max-width:...){...}
+(até o width específicado será atribuídos os valores dentro deste comando)
+
+Inverter ordem de elementos dentro do flex
+"row ou colunm"-reverse
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root{
+    --Tamanho1_5rem: 1.2rem;
+    --Tamanho2_rem: 1.7rem;
+    --Ciano: #22D4FD;
+    --CorFundo: black;
+    --Branco: white;
+    --cor-hover: #272727;
+    --fontKrona: "Krona One", sans-serif;
+    --fontMontserrat: "Montserrat", sans-serif;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: var(--Branco);
+    background-color: var(--CorFundo);
+}
+.destaqueTitulo{
+    color: var(--Ciano);
+}
+.destaque{
+    color: var(--Ciano);
+    font-size: var(--Tamanho1_5rem);
+}
+.principal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5% 15%;
+    gap: 80px;
+}
+.principalConteudo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.apresentaçaoConteudoTitulo{
+    font-size: var(--Tamanho2_rem);
+    font-family: var(--fontKrona);
+}
+.apresentaçaoConteudoParagrafo{
+    font-size: var(--Tamanho1_5rem);
+    font-family: var(--fontMontserrat);
+}
+.apresentaçaoLinks{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+.apresentaçaoLinksSubtitulo{
+    font-family: var(--fontKrona);
+    font-weight: 400;
+    font-size: var(--Tamanho1_5rem);
+}
+.apresentaçaoLinksNavegacao{
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: var(--Tamanho1_5rem);
+    padding: 15.5px 0px;
+    text-decoration: none;
+    color: var(--Branco);
+    border: 2px solid var(--Ciano);
+    font-family: var(--fontKrona);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.apresentaçaoLinksNavegacao img{
+   width: 30px;
+   box-shadow: none;
+}
+.apresentaçaoLinksNavegacao:hover{
+    background-color: var(--cor-hover)
+}
+.rodape{
+    color: var(--CorFundo);
+    background-color: var(--Ciano);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fontMontserrat);
+    font-size: var(--Tamanho1_5rem);
+    font-weight: 400;
+}
+.cabecalhoMenuLink{
+    font-family: var(--fontMontserrat);
+    font-size: var(--Tamanho1_5rem);
+    font-weight: 600;
+    color: var(--Ciano);
+    text-decoration: none;
+}
+.cabecalho{
+    padding: 2% 0% 0% 15%;
+}
+.cabecalhoMenu{
+    display: flex;
+    gap: 80px;
+}
+.curriculo{
+    width: 50%;
+    box-shadow: 10px -10px 1px var(--Ciano);
+}
+
+@media (max-width: 1200px){
+    :root{
+        --Tamanho2_rem: 2.7rem;
+        --Tamanho1_5rem: 1.5rem;
+    }
+    .principal{
+        flex-direction: column-reverse;
+    }
+    .cabecalho{
+        padding: 10%;
+    }
+    .cabecalhoMenu{
+        justify-content: center;
+    }
+    .principal{
+        padding: 5%;
+    }
+    .principalConteudo{
+        width: auto;
+    }
+    .curriculo{
+        width: 75%;
+    }
+}
